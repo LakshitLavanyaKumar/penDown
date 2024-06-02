@@ -1,0 +1,42 @@
+<style>
+    a.delete {
+        position: relative;
+    }
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: rgb(5, 23, 191);
+    }
+
+</style>
+<div class="content">
+    <h1><%= data.title %></h1>
+    <h3><%= data.subtitle %></h3>
+    <h5><%= data.body %></h5>
+    <p>------<%= data.author %>------</p>
+    <form action="/view/<%= data._id %>?_method=DELETE" method="POST">
+        <input type="submit" value="Delete" class="btn-delete btn">
+      </form>
+</div>
+
+<!-- <script>//front end js here
+    const trash=document.querySelector('a.delete')
+    trash.addEventListener('click',(e)=>{
+        const endpoint=`/blogs/${trash.dataset.doc}`
+        fetch(endpoint,{
+            method:'DELETE'
+        })
+        .then((response)=>{
+            response.json()
+        })
+            .then(data=>window.location.href=data.redirect)
+        .catch(err=>{
+            console.log(err)
+        })
+    })
+</script> -->
+
+<a href='#' class="pagination">&rightarrow; GO TO TOP</a> 

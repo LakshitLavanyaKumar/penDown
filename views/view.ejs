@@ -1,0 +1,19 @@
+<ul class="all">
+    <% if(items.length>0){  %>
+        <% items.forEach(blog =>{ %>
+            <li>
+            <a  href="/view/<%= blog._id %>"> 
+                <h3  ><%= blog.title %> &nearr;</h3>
+                </a>
+                <span ><%= blog.subtitle %></span>
+            
+        </li>
+        <% }) %>
+    <% } else { %>
+        <p>No Blogs</p>
+    <% } %>
+    </ul>
+
+    
+    <a href='#' class="pagination">&rightarrow; GO TO TOP</a> 
+    
